@@ -10,7 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181221053357) do
+ActiveRecord::Schema.define(version: 20181221183253) do
+
+  create_table "cargas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.datetime "fecha"
+    t.string "placa"
+    t.string "campana"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "nombre"
+    t.string "vehiculo"
+    t.string "placa"
+    t.string "cel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ingresopedidos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "Ndefactura"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pedidos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "nfactura"
+    t.string "nombre"
+    t.string "campana"
+    t.string "zona"
+    t.string "nidentificacion"
+    t.string "telefono"
+    t.string "tipodepedido"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "email", default: "", null: false

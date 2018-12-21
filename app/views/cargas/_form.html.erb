@@ -1,0 +1,32 @@
+<%= form_with(model: carga, local: true) do |form| %>
+  <% if carga.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(carga.errors.count, "error") %> prohibited this carga from being saved:</h2>
+
+      <ul>
+      <% carga.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.datetime_select :fecha, id: :carga_fecha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :placa %>
+    <%= form.text_field :placa, id: :carga_placa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :campana %>
+    <%= form.text_field :campana, id: :carga_campana %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class Ingresopedido < ApplicationRecord
+end

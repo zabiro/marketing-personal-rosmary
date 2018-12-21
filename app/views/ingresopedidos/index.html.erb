@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ingresopedidos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ndefactura</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingresopedidos.each do |ingresopedido| %>
+      <tr>
+        <td><%= ingresopedido.Ndefactura %></td>
+        <td><%= link_to 'Show', ingresopedido %></td>
+        <td><%= link_to 'Edit', edit_ingresopedido_path(ingresopedido) %></td>
+        <td><%= link_to 'Destroy', ingresopedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ingresopedido', new_ingresopedido_path %>

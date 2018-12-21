@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nfactura:</strong>
+  <%= @pedido.nfactura %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @pedido.nombre %>
+</p>
+
+<p>
+  <strong>Campana:</strong>
+  <%= @pedido.campana %>
+</p>
+
+<p>
+  <strong>Zona:</strong>
+  <%= @pedido.zona %>
+</p>
+
+<p>
+  <strong>Nidentificacion:</strong>
+  <%= @pedido.nidentificacion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @pedido.telefono %>
+</p>
+
+<p>
+  <strong>Tipodepedido:</strong>
+  <%= @pedido.tipodepedido %>
+</p>
+
+<%= link_to 'Edit', edit_pedido_path(@pedido) %> |
+<%= link_to 'Back', pedidos_path %>
