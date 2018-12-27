@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'rails-erd', '~> 1.4', '>= 1.4.7'
 gem 'mysql2'
 gem 'roo', '~> 2.5'
 gem 'bootstrap'
@@ -15,6 +15,7 @@ gem 'rails_admin'
 gem 'cancancan'
 gem 'remotipart'	
 gem 'toastr-rails'
+gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6', '>= 5.1.6.1'
 # Use mysql as the database for Active Record

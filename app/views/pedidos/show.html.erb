@@ -1,28 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nfactura:</strong>
-  <%= @pedido.nfactura %>
-</p>
-
-<p>
   <strong>Nombre:</strong>
-  <%= @pedido.nombre %>
+  <%= @pedido.Nombre %>
 </p>
 
 <p>
-  <strong>Campana:</strong>
-  <%= @pedido.campana %>
-</p>
-
-<p>
-  <strong>Zona:</strong>
-  <%= @pedido.zona %>
-</p>
-
-<p>
-  <strong>Nidentificacion:</strong>
-  <%= @pedido.nidentificacion %>
+  <strong>Direccion:</strong>
+  <%= @pedido.Direccion %>
 </p>
 
 <p>
@@ -31,8 +16,23 @@
 </p>
 
 <p>
-  <strong>Tipodepedido:</strong>
-  <%= @pedido.tipodepedido %>
+  <strong>Campana:</strong>
+  <%= @pedido.campana %>
+</p>
+
+<p>
+  <strong>Placa:</strong>
+  <%= @pedido.placa %>
+</p>
+
+<p>
+  <strong>Zona:</strong>
+  <%= @pedido.zona %>
+</p>
+
+<p>
+  <strong>Ncaja:</strong>
+  <%= @pedido.ncaja %>
 </p>
 
 <%= link_to 'Edit', edit_pedido_path(@pedido) %> |

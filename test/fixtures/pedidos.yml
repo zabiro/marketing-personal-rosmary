@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nfactura: MyString
-  nombre: MyString
-  campa«Òa: MyString
-  zona: MyString
-  nidentificacion: MyString
+  Nombre: MyString
+  Direccion: MyString
   telefono: MyString
-  tipodepedido: MyString
+  campana: MyString
+  placa: MyString
+  zona: MyString
+  ncaja: MyString
 
 two:
-  nfactura: MyString
-  nombre: MyString
-  campa«Òa: MyString
-  zona: MyString
-  nidentificacion: MyString
+  Nombre: MyString
+  Direccion: MyString
   telefono: MyString
-  tipodepedido: MyString
+  campana: MyString
+  placa: MyString
+  zona: MyString
+  ncaja: MyString

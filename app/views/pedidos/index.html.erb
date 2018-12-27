@@ -5,13 +5,13 @@
 <table>
   <thead>
     <tr>
-      <th>Nfactura</th>
       <th>Nombre</th>
-      <th>Campana</th>
-      <th>Zona</th>
-      <th>Nidentificacion</th>
+      <th>Direccion</th>
       <th>Telefono</th>
-      <th>Tipodepedido</th>
+      <th>Campana</th>
+      <th>Placa</th>
+      <th>Zona</th>
+      <th>Ncaja</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,13 +19,13 @@
   <tbody>
     <% @pedidos.each do |pedido| %>
       <tr>
-        <td><%= pedido.nfactura %></td>
-        <td><%= pedido.nombre %></td>
-        <td><%= pedido.campana %></td>
-        <td><%= pedido.zona %></td>
-        <td><%= pedido.nidentificacion %></td>
+        <td><%= pedido.Nombre %></td>
+        <td><%= pedido.Direccion %></td>
         <td><%= pedido.telefono %></td>
-        <td><%= pedido.tipodepedido %></td>
+        <td><%= pedido.campana %></td>
+        <td><%= pedido.placa %></td>
+        <td><%= pedido.zona %></td>
+        <td><%= pedido.ncaja %></td>
         <td><%= link_to 'Show', pedido %></td>
         <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>
         <td><%= link_to 'Destroy', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>

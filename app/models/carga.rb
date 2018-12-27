@@ -1,2 +1,0 @@
-class Carga < ApplicationRecord
-end

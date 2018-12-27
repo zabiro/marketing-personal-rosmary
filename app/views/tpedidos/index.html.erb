@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tpedidos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipopedido</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tpedidos.each do |tpedido| %>
+      <tr>
+        <td><%= tpedido.tipopedido %></td>
+        <td><%= link_to 'Show', tpedido %></td>
+        <td><%= link_to 'Edit', edit_tpedido_path(tpedido) %></td>
+        <td><%= link_to 'Destroy', tpedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tpedido', new_tpedido_path %>

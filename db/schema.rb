@@ -10,44 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181221183253) do
-
-  create_table "cargas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.datetime "fecha"
-    t.string "placa"
-    t.string "campana"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "nombre"
-    t.string "vehiculo"
-    t.string "placa"
-    t.string "cel"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "ingresopedidos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "Ndefactura"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20181227170935) do
 
   create_table "pedidos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "nfactura"
-    t.string "nombre"
-    t.string "campana"
-    t.string "zona"
-    t.string "nidentificacion"
+    t.string "Nombre"
+    t.string "Direccion"
     t.string "telefono"
-    t.string "tipodepedido"
+    t.string "campana"
+    t.string "placa"
+    t.string "zona"
+    t.string "ncaja"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "tpedido_id"
+    t.index ["tpedido_id"], name: "index_pedidos_on_tpedido_id"
+  end
+
+  create_table "solicituds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.date "fecha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "pedido_id"
+    t.index ["pedido_id"], name: "index_solicituds_on_pedido_id"
+    t.index ["user_id"], name: "index_solicituds_on_user_id"
+  end
+
+  create_table "tpedidos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "tipopedido"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "nombre", default: "", null: false
+    t.string "apellido", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -62,4 +59,18 @@ ActiveRecord::Schema.define(version: 20181221183253) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vehiculos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "marca"
+    t.string "vehiculo"
+    t.string "placa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_vehiculos_on_user_id"
+  end
+
+  add_foreign_key "pedidos", "tpedidos"
+  add_foreign_key "solicituds", "pedidos"
+  add_foreign_key "solicituds", "users"
+  add_foreign_key "vehiculos", "users"
 end

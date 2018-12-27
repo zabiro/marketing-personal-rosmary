@@ -69,6 +69,6 @@ class PedidosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:nfactura, :nombre, :campana, :zona, :nidentificacion, :telefono, :tipodepedido)
+      params.require(:pedido).permit(:Nombre, :Direccion, :telefono, :campana, :placa, :zona, :ncaja)
     end
 end
