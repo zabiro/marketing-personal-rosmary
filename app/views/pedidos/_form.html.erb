@@ -46,6 +46,12 @@
     <%= form.text_field :ncaja, id: :pedido_ncaja %>
   </div>
 
+  <div class="field">
+    <%= form.label :tipo_de_pedido %>
+    <%= form.collection_select :id, Tpedido.all, :id, :tipopedido %>
+    
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
