@@ -4,6 +4,7 @@ class CreateVehiculos < ActiveRecord::Migration[5.1]
       t.string :marca
       t.string :vehiculo
       t.string :placa
+      
 
       t.timestamps
     end

@@ -8,6 +8,7 @@ class CreatePedidos < ActiveRecord::Migration[5.1]
       t.string :placa
       t.string :zona
       t.string :ncaja
+      
 
       t.timestamps
     end

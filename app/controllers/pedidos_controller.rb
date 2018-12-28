@@ -15,6 +15,7 @@ class PedidosController < ApplicationController
   # GET /pedidos/new
   def new
     @pedido = Pedido.new
+    
   end
 
   # GET /pedidos/1/edit
@@ -25,6 +26,8 @@ class PedidosController < ApplicationController
   # POST /pedidos.json
   def create
     @pedido = Pedido.new(pedido_params)
+
+    
 
     respond_to do |format|
       if @pedido.save
@@ -41,6 +44,7 @@ class PedidosController < ApplicationController
   # PATCH/PUT /pedidos/1.json
   def update
     respond_to do |format|
+    
       if @pedido.update(pedido_params)
         format.html { redirect_to @pedido, notice: 'Pedido was successfully updated.' }
         format.json { render :show, status: :ok, location: @pedido }
@@ -69,6 +73,6 @@ class PedidosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:Nombre, :Direccion, :telefono, :campana, :placa, :zona, :ncaja)
+      params.require(:pedido).permit(:Nombre, :Direccion, :telefono, :campana, :placa, :zona, :ncaja, :tpedido_id)
     end
 end

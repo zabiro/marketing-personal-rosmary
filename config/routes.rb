@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :estados
   resources :vehiculos
   resources :solicituds
   resources :tpedidos

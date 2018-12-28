@@ -1,0 +1,33 @@
+<%= form_with(model: estado, local: true) do |form| %>
+  <% if estado.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(estado.errors.count, "error") %> prohibited this estado from being saved:</h2>
+
+      <ul>
+      <% estado.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Transportista %>
+    <%= form.collection_select :nombre, User.all, :id, :nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actualizar_pedido %>
+    <%= form.select :td, [['BODEGA','1'], ['TRANSPORTADOR','2']], class: 'form-control'%>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :No_factura %>
+    <%= form.text_field :actualizarestado, id: :estado_actualizarestado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

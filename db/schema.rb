@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181227170935) do
+ActiveRecord::Schema.define(version: 20181228044027) do
+
+  create_table "estados", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "actualizarestado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pedidos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "Nombre"
@@ -23,6 +29,8 @@ ActiveRecord::Schema.define(version: 20181227170935) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "tpedido_id"
+    t.bigint "estado_id"
+    t.index ["estado_id"], name: "index_pedidos_on_estado_id"
     t.index ["tpedido_id"], name: "index_pedidos_on_tpedido_id"
   end
 
@@ -43,8 +51,6 @@ ActiveRecord::Schema.define(version: 20181227170935) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "nombre", default: "", null: false
-    t.string "apellido", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -55,6 +61,9 @@ ActiveRecord::Schema.define(version: 20181227170935) do
     t.boolean "superadmin_role", default: false
     t.boolean "admin_role", default: false
     t.boolean "user_role", default: true
+    t.string "nombre"
+    t.string "apellido"
+    t.datetime "date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -69,6 +78,7 @@ ActiveRecord::Schema.define(version: 20181227170935) do
     t.index ["user_id"], name: "index_vehiculos_on_user_id"
   end
 
+  add_foreign_key "pedidos", "estados"
   add_foreign_key "pedidos", "tpedidos"
   add_foreign_key "solicituds", "pedidos"
   add_foreign_key "solicituds", "users"
