@@ -6,11 +6,10 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails-erd', '~> 1.4', '>= 1.4.7'
-gem 'jquery-datatables-rails', '~> 3.4'
+gem 'jquery-datatables'
 gem 'mysql2'
 gem 'roo', '~> 2.5'
 gem 'bootstrap'
-gem 'jquery-rails'
 gem 'devise'
 gem 'rails_admin'
 gem 'cancancan'
