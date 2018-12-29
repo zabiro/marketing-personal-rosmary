@@ -9,14 +9,14 @@ class PedidosController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @pedidos.to_csv }
-      format.xls { send_data @pedidos.to_csv(col_sep: "\t"), filename: 'your_file_name.xls'}
+      format.xls { send_data @pedidos.to_csv(col_sep: "\t"), filename: 'your_file_name.xlsx'}
     end
   end
   
   def import
     puts params[:file]
     Pedido.import(params[:file])
-    redirect_to pedido_index_url, notice: "Pedidos imported."
+    redirect_to pedidos_url notice: "Products imported."
 end
 
   # GET /pedidos/1
