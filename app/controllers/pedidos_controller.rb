@@ -5,7 +5,19 @@ class PedidosController < ApplicationController
   # GET /pedidos.json
   def index
     @pedidos = Pedido.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @pedidos.to_csv }
+      format.xls { send_data @pedidos.to_csv(col_sep: "\t"), filename: 'your_file_name.xls'}
+    end
   end
+  
+  def import
+    puts params[:file]
+    Pedido.import(params[:file])
+    redirect_to pedido_index_url, notice: "Pedidos imported."
+end
 
   # GET /pedidos/1
   # GET /pedidos/1.json
@@ -18,6 +30,7 @@ class PedidosController < ApplicationController
     
   end
 
+  
   # GET /pedidos/1/edit
   def edit
   end

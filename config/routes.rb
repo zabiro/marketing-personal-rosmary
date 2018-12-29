@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :solicituds
   resources :tpedidos
   resources :pedidos
+  resources :pedidos do
+    collection { post :import }
+  end
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   get 'home/index'
