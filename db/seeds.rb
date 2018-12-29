@@ -8,3 +8,5 @@
 
 Tpedido.create(tipopedido: "Normal")
 Tpedido.create(tipopedido: "Premios")
+user = User.create! :email => 'root@root.com', :password => 'password', :password_confirmation => 'password', :superadmin_role => 'true'
+
