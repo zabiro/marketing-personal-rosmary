@@ -9,7 +9,7 @@ class PedidosController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @pedidos.to_csv }
-      format.xls { send_data @pedidos.to_csv(col_sep: "\t"), filename: 'your_file_name.xlsx'}
+      format.xls { send_data @pedidos.to_csv(col_sep: "\t"), filename: 'your_file_name.xls'}
     end
   end
   
@@ -86,6 +86,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pedido_params
-      params.require(:pedido).permit(:Nombre, :Direccion, :telefono, :campana, :placa, :zona, :ncaja, :tpedido_id)
+      params.require(:pedido).permit(:nfactura, :Nombre, :Direccion, :telefono, :campana, :placa, :zona, :ncaja, :tpedido_id, :estado_id)
     end
 end

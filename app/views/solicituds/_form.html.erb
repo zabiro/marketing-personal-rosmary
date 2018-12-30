@@ -11,10 +11,24 @@
     </div>
   <% end %>
 
+  
+
   <div class="field">
     <%= form.label :fecha %>
     <%= form.date_select :fecha, id: :solicitud_fecha %>
   </div>
+
+  <div class="field">
+    <%= form.label :Transportista %>
+    <%= form.collection_select :nombre, User.all, :id, :nombre %>
+    </div>
+    
+    <div class="field">
+    <%= form.label :actualizar_pedido %>
+    <%= form.select :td, [['BODEGA','1'], ['TRANSPORTADOR','2']], class: 'form-control'%>
+  </div>
+
+        
 
   <div class="actions">
     <%= form.submit %>

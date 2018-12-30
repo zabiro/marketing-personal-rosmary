@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :Numero_de_factura %>
+    <%= form.text_field :nfactura, id: :pedido_nfactura%>
+  </div>
+
+  <div class="field">
     <%= form.label :Nombre %>
     <%= form.text_field :Nombre, id: :pedido_Nombre %>
   </div>
@@ -44,6 +49,10 @@
   <div class="field">
     <%= form.label :ncaja %>
     <%= form.text_field :ncaja, id: :pedido_ncaja %>
+  </div>
+
+  <div class="field">
+  <%= form.collection_select :estado_id, Estado.all, :id, :actualizarestado %>
   </div>
 
   <div class="field">

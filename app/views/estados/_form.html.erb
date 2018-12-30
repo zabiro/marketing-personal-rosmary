@@ -11,19 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :Transportista %>
-    <%= form.collection_select :nombre, User.all, :id, :nombre %>
-  </div>
 
   <div class="field">
-    <%= form.label :actualizar_pedido %>
-    <%= form.select :td, [['BODEGA','1'], ['TRANSPORTADOR','2']], class: 'form-control'%>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :No_factura %>
+    <%= form.label :estados %>
     <%= form.text_field :actualizarestado, id: :estado_actualizarestado %>
   </div>
 

@@ -3,6 +3,7 @@ class Pedido < ApplicationRecord
     has_many :solicitud
     belongs_to :tpedido
     belongs_to :estado, optional: true
+    validates :nfactura, uniqueness: true
 
     def self.to_csv(options = {})
     CSV.generate(options) do |csv|

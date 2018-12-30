@@ -8,5 +8,8 @@
 
 Tpedido.create(tipopedido: "Normal")
 Tpedido.create(tipopedido: "Premios")
-user = User.create! :email => 'root@root.com', :password => 'password', :password_confirmation => 'password', :superadmin_role => 'true'
+users = User.create! :email => 'root@root.com', :password => 'password', :password_confirmation => 'password', :superadmin_role => 'true'
 
+Estado.create(actualizarestado: "espera")
+Estado.create(actualizarestado: "bodega")
+Estado.create(actualizarestado: "transportista")

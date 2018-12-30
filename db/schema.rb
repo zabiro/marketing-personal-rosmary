@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20181228044027) do
   end
 
   create_table "pedidos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "nfactura"
     t.string "Nombre"
     t.string "Direccion"
     t.string "telefono"

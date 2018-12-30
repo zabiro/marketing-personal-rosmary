@@ -1,6 +1,7 @@
 class CreatePedidos < ActiveRecord::Migration[5.1]
   def change
     create_table :pedidos do |t|
+      t.string :nfactura, unique: true
       t.string :Nombre
       t.string :Direccion
       t.string :telefono
